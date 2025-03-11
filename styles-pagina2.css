@@ -5,19 +5,66 @@ body {
     overflow: hidden; /* Remove a barra de rolagem */
     font-family: Arial, sans-serif;
     /* Imagem de fundo */
-    background-image: url('pesqueir.jpeg'); /* Substitua pelo link da sua imagem */
+    background-image: url('/agora-vai/pesqueir.jpeg'); /* Substitua pelo link da sua imagem */
     background-size: cover; /* Cobrir toda a tela */
     background-position: center; /* Centralizar a imagem */
     background-repeat: no-repeat; /* Evitar repetição */
     height: 100vh; /* Garante que o body ocupe 100% da altura da tela */
 }
 
-/* Estilo das frases */
 .frase {
-    position: absolute; /* Permite posicionar cada frase individualmente */
-    font-size: 50px;
+    position: absolute;
+    font-size: 60px;
     font-weight: bold;
-    user-select: none; /* Impede a seleção do texto */
-    white-space: nowrap; /* Impede a quebra de linha */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombra no texto para melhorar a legibilidade */
+    user-select: none;
+    white-space: nowrap;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+    animation: entrada 1s ease-out;
+    transition: color 0.3s ease;
+    margin: 0; /* Garante que não há margens */
+    padding: 0; /* Garante que não há paddings */
+}
+
+/* Animação de entrada */
+@keyframes entrada {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Estilo da mensagem final */
+.mensagem-final {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: none; /* Inicialmente oculta */
+}
+
+.mensagem-final h2 {
+    font-size: 40px;
+    color: #333;
+}
+
+.mensagem-final button {
+    padding: 10px 20px;
+    font-size: 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#botaoSim {
+    background-color: green;
+    color: white;
+}
+
+#botaoNao {
+    background-color: red;
+    color: white;
 }
