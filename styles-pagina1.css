@@ -11,7 +11,7 @@ body {
     position: relative; /* Permite posicionar elementos filhos de forma absoluta */
 
     /* Imagem de fundo */
-    background-image: url('/rickqvn/agora-vai/foto.jpeg'); /* Substitua pelo link da sua imagem */
+    background-image: url('/rickqvn/agora-vai/essa.jpg'); /* Substitua pelo link da sua imagem */
     background-size: cover; /* Cobrir toda a tela */
     background-position: center; /* Centralizar a imagem */
     background-repeat: no-repeat; /* Evitar repetição */
