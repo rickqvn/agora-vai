@@ -11,7 +11,7 @@ body {
     position: relative; /* Permite posicionar elementos filhos de forma absoluta */
 
     /* Imagem de fundo */
-    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.cnnbrasil.com.br%2Flifestyle%2Fdescubra-como-planejar-um-casamento-sustentavel-em-2024%2F&psig=AOvVaw01PnPTILvWx7TwDmm4yGwA&ust=1741807420827000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLCvybbggowDFQAAAAAdAAAAABAE'); /* Substitua pelo link da sua imagem */
+    background-image: url('foto.jpeg'); /* Substitua pelo link da sua imagem */
     background-size: cover; /* Cobrir toda a tela */
     background-position: center; /* Centralizar a imagem */
     background-repeat: no-repeat; /* Evitar repetição */
