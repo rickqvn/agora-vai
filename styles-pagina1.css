@@ -1,0 +1,64 @@
+/* Estilo do corpo da página */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Altura total da janela */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    flex-direction: column; /* Alinha os itens em coluna */
+    font-family: Arial, sans-serif;
+    position: relative; /* Permite posicionar elementos filhos de forma absoluta */
+
+    /* Imagem de fundo */
+    background-image: url('casa.JPEG'); /* Substitua pelo link da sua imagem */
+    background-size: cover; /* Cobrir toda a tela */
+    background-position: center; /* Centralizar a imagem */
+    background-repeat: no-repeat; /* Evitar repetição */
+}
+
+/* Estilo do título */
+h1 {
+    margin-bottom: 200px; /* Espaçamento abaixo do título */
+    font-size: 100px;
+    color: #fff; /* Cor do texto (branco para contraste) */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombra no texto para melhorar a legibilidade */
+}
+
+/* Container para os botões */
+.container-botoes {
+    display: flex; /* Alinha os botões lado a lado */
+    gap: 25px; /* Espaçamento entre os botões */
+}
+
+/* Estilo do botão vermelho */
+.botao-vermelho {
+    background-color: red; /* Cor de fundo vermelha */
+    color: white; /* Cor do texto branco */
+    padding: 15px 30px; /* Espaçamento interno */
+    font-size: 30px; /* Tamanho da fonte */
+    border: none; /* Remove a borda */
+    border-radius: 10px; /* Borda arredondada */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    position: absolute; /* Permite posicionar o botão em qualquer lugar da tela */
+    transition: top 0.5s, left 0.5s; /* Suaviza o movimento */
+}
+
+.botao-vermelho:hover {
+    background-color: darkred; /* Muda a cor ao passar o mouse */
+}
+
+/* Estilo do botão verde */
+.botao-verde {
+    background-color: green; /* Cor de fundo verde */
+    color: white; /* Cor do texto branco */
+    padding: 15px 30px; /* Espaçamento interno */
+    font-size: 30px; /* Tamanho da fonte */
+    border: none; /* Remove a borda */
+    border-radius: 10px; /* Borda arredondada */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+}
+
+.botao-verde:hover {
+    background-color: darkgreen; /* Muda a cor ao passar o mouse */
+}

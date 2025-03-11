@@ -1,0 +1,23 @@
+/* Estilo do corpo da página */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Remove a barra de rolagem */
+    font-family: Arial, sans-serif;
+    /* Imagem de fundo */
+    background-image: url('pesqueir.jpeg'); /* Substitua pelo link da sua imagem */
+    background-size: cover; /* Cobrir toda a tela */
+    background-position: center; /* Centralizar a imagem */
+    background-repeat: no-repeat; /* Evitar repetição */
+    height: 100vh; /* Garante que o body ocupe 100% da altura da tela */
+}
+
+/* Estilo das frases */
+.frase {
+    position: absolute; /* Permite posicionar cada frase individualmente */
+    font-size: 50px;
+    font-weight: bold;
+    user-select: none; /* Impede a seleção do texto */
+    white-space: nowrap; /* Impede a quebra de linha */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombra no texto para melhorar a legibilidade */
+}
