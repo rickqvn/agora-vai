@@ -21,7 +21,7 @@ function criarCascata() {
         elementoFrase.className = "frase";
         elementoFrase.textContent = frase;
 
-        // Define uma cor aleatória para a frase
+        // Define uma cor aleatória vibrante para a frase
         elementoFrase.style.color = gerarCorAleatoria();
 
         // Posiciona a frase aleatoriamente no topo da tela
@@ -31,12 +31,18 @@ function criarCascata() {
         // Adiciona a frase ao corpo da página
         body.appendChild(elementoFrase);
 
-        // Animação para fazer a frase cair
+        // Força o navegador a renderizar a frase antes de calcular a altura
+        void elementoFrase.offsetHeight;
+
+        // Calcula a posição final (final da tela + altura da frase)
+        const posicaoFinal = window.innerHeight + elementoFrase.offsetHeight;
+
+        // Animação para fazer a frase cair até o final da tela
         const duracao = 3 + Math.random() * 5; // Duração aleatória entre 3 e 8 segundos
-        elementoFrase.animate(
+        const animacao = elementoFrase.animate(
             [
-                { top: `-50px`, opacity: 0 }, // Começa acima da tela e invisível
-                { top: `${window.innerHeight}px`, opacity: 1 } // Termina no final da tela e visível
+                { top: `-50px`, opacity: 1 }, // Começa acima da tela
+                { top: `${posicaoFinal}px`, opacity: 1 } // Termina no final da tela + altura da frase
             ],
             {
                 duration: duracao * 1000, // Duração em milissegundos
@@ -45,11 +51,44 @@ function criarCascata() {
         );
 
         // Remove a frase do DOM após a animação terminar
-        elementoFrase.addEventListener("animationend", () => {
+        animacao.onfinish = () => {
             elementoFrase.remove();
+        };
+
+        // Interatividade: muda a cor ao clicar na frase
+        elementoFrase.addEventListener("click", () => {
+            elementoFrase.style.color = gerarCorAleatoria();
         });
     }, 200); // Adiciona uma nova frase a cada 200ms (0.2 segundos)
 }
 
+// Função para exibir a mensagem final após um tempo
+function exibirMensagemFinal() {
+    const mensagemFinal = document.getElementById("mensagemFinal");
+    mensagemFinal.style.display = "block"; // Exibe a mensagem final
+
+    // Efeito de confete ao clicar em "Sim!"
+    const botaoSim = document.getElementById("botaoSim");
+    botaoSim.addEventListener("click", () => {
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
+        mensagemFinal.innerHTML = "<h2>Eba! Vamos viver essa história juntos! ❤️</h2>";
+    });
+
+    // Botão "Não" move-se aleatoriamente
+    const botaoNao = document.getElementById("botaoNao");
+    botaoNao.addEventListener("mouseover", () => {
+        botaoNao.style.position = "absolute";
+        botaoNao.style.left = `${Math.random() * (window.innerWidth - 100)}px`;
+        botaoNao.style.top = `${Math.random() * (window.innerHeight - 50)}px`;
+    });
+}
+
 // Inicia a animação quando a página carrega
-window.addEventListener("load", criarCascata);
+window.addEventListener("load", () => {
+    criarCascata();
+    setTimeout(exibirMensagemFinal, 10000); // Exibe a mensagem final após 10 segundos
+});
